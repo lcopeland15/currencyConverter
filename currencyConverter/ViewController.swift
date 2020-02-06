@@ -27,40 +27,42 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var exchangeRateTotal: UILabel!
     
-    //Buttons
     
-    @IBAction func poundButton(_ sender: UIButton) {
-        exchangeRate = 0.77
-        exchangeTotal = amountInput1 * exchangeRate
-        exchangeRateTotal.text = "Total Amount: $ " + String(exchangeTotal)
+    //calculations
+
+
+    //button
+    @IBAction func currencyButtonPressed(_ sender: UIButton) {
+        if sender.tag == 0
+        {
+            exchangeRate = 0.77
+    
+        }
+        if sender.tag == 1
+        {
+            exchangeRate = 0.91
+        }
+        if sender.tag == 3
+        {
+            exchangeRate = 71.24
+            
+        }
+        if sender.tag == 4
+        {
+            exchangeRate = 109.87
+            
+        }
+        if sender.tag == 5
+        {
+            exchangeRate = 6.96
+      
+        }
+        exchangeTotal = exchangeRate * amountInput1
+        exchangeRateTotal.text =  String(format: "Total Amount: $%.02f", exchangeTotal )
     }
     
-    @IBAction func euroButton(_ sender: UIButton) {
-        exchangeRate = 0.91
-        exchangeTotal = amountInput1 * exchangeTotal
-        exchangeRateTotal.text = "Total Amount: $ " + String(exchangeTotal)
-    }
     
-    @IBAction func rupeeButton(_ sender: UIButton) {
-        exchangeRate = 71.24
-        exchangeTotal = amountInput1 * exchangeTotal
-        exchangeRateTotal.text = "Total Amount: $ " + String(exchangeTotal)
-    }
-    
-    @IBAction func yenButton(_ sender: UIButton) {
-        exchangeRate = 109.87
-        exchangeTotal = amountInput1 * exchangeTotal
-        exchangeRateTotal.text = "Total Amount: $ " + String(exchangeTotal)
-    }
-    
-    @IBAction func yuanButton(_ sender: UIButton) {
-        exchangeRate = 6.96
-        exchangeTotal = amountInput1 * exchangeTotal
-        exchangeRateTotal.text = "Total Amount: $ " + String(exchangeTotal)
-        
-    }
-    
-    @IBAction func clearButton(_ sender: UIButton) {
+       @IBAction func clearButton(_ sender: UIButton) {
         exchangeRateTotal.text = " "
     }
     
