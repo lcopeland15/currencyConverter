@@ -33,12 +33,11 @@ class ViewController: UIViewController {
 
     //button
     @IBAction func currencyButtonPressed(_ sender: UIButton) {
-        if sender.tag == 0
+        if sender.tag == 1
         {
             exchangeRate = 0.77
-    
         }
-        if sender.tag == 1
+        if sender.tag == 2
         {
             exchangeRate = 0.91
         }
